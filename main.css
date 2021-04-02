@@ -1,0 +1,307 @@
+/* Global initialize */
+
+* { box-sizing: border-box; }
+
+body, section, h1, h2, p, svg { margin: 0; padding: 0; }
+
+body { font-family: 'Roboto', sans-serif; color: white;}
+
+.header { text-align: center; padding-top: 90px; }
+
+h1 { font-size: 28px; }
+
+p { font-size: 16px; }
+
+.header p { font-weight: 100; }
+
+/* Content section */
+
+.content-wrapper {
+    text-align: center;
+    padding: 45px 15% 131px 15%;
+    width: 100%;
+}
+
+.content-wrapper::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.project {
+    position: relative;
+    float:left;
+    width: 25%;
+    height: 506px;
+    background-color: #f35e59;
+}
+
+.project a{
+    position: absolute;
+    top:0;
+    left:0;
+    display: block;
+    width: 100%;
+    height: 50%;
+    z-index: 10;
+}
+
+.project img.icon{
+    position: absolute;
+    top:75px;
+    left:50%;
+    transform: translate(-50%);
+}
+
+.project img.photo{
+    position: absolute;
+    top:50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+.project img.photo:hover{
+    transform: scale(1.5);
+     z-index: 15;
+}
+
+.opacity-div {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: white;
+    opacity: 0;
+    transition: 1s;
+}
+
+.project a:hover + div.opacity-div{
+    opacity: 0.5;
+}
+
+.project h2{
+    padding: 137px 0px 0px;
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.project p{
+    font-weight:bold;
+}
+
+/* Form section */
+
+.form-wrapper {
+    padding: 0px 50px 112px 50px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.form-wrapper svg{ margin-top: 10px; }
+
+.form-wrapper form {
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: white;
+  margin-top: 48px;
+  padding: 50px 64px 68px 64px;
+  max-width: 100%;
+  height: 0px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
+  transition-delay: 0.2s;
+}
+.form-button-wrapper {
+    position: relative;
+    max-width: 683px;
+    margin: auto;
+}
+svg.drop:hover + div form, .form-wrapper form:hover{
+    height: 448px;
+    opacity: 1;
+    visibility: visible;
+}
+
+svg.drop:hover + div form p, .form-wrapper form:hover p {
+    transform: scale(1);
+}
+svg.drop:hover +div a, .form-wrapper form:hover + a {
+    opacity: 1;
+}
+svg.drop:hover ~ div .arrow, .form-wrapper form:hover ~ .arrow {
+    opacity: 1;
+}
+svg.drop:hover + div form input, .form-wrapper form:hover input {
+    transform: scale(1);
+}
+
+svg.drop:hover { cursor: pointer; }
+
+.arrow {
+  position: absolute;
+  top: -62px;
+  left: 50%;
+  margin-left: -31px;
+  border-width: 31px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+  opacity: 0;transition: 1s;
+}
+
+.close svg{
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  margin-top: 0;
+  z-index: 100;
+}
+.close { opacity: 0;transition: 1s;}
+
+.form-wrapper p {
+  color: #828282;
+  margin-bottom: 40px;
+  transform: scale(0);
+  transition-duration: 1s;
+  transition-delay: .5s;
+}
+
+.form-wrapper input{
+  width: 80%;
+  height: 52px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transform: scale(0);
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-delay: .5s;
+}
+
+.form-wrapper input:hover {
+    box-shadow: 0px 0px 2px #1287bf;
+}
+
+.form-wrapper input:focus {
+    box-shadow: 0px 0px 2px #1287bf;
+    border-color: #1287bf;
+}
+
+input[type=submit] {
+  width: 30%;
+  display: inline-block;
+  height: 46px;
+  background-color: #de2b24;
+  color: white;
+  padding: 0px;
+  margin-top: 36px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.form-wrapper input[type=submit]:hover {
+   background-color: #e65650;
+   border: 2px solid black;
+}
+
+/* Footer section */
+
+.center {
+  text-align: center;
+}
+
+.pagination { margin-top: 30px; }
+
+.pagination a {
+  display: block;
+  width: 49px;
+  height: 49px;
+  display: inline-block;
+  border: 2px solid #515151;
+  border-radius: 3px;
+  margin: 0 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pagination a:hover {border-color: #de2b24;}
+
+footer { padding-bottom: 84px; }
+
+footer p {
+    color: #cecece;
+    padding-top: 39px;
+    padding-bottom: 34px;
+}
+
+footer input[type=email] {
+  width: 80%;
+  margin-bottom: 10px;
+  height: 52px;
+  max-width: 683px;
+  padding-left: 20px;
+  display: inline-block;
+  background-color: #515151;
+  border: none;
+  border-radius: 1px;
+  color: #cecece;
+  outline: none;
+}
+
+footer input[type=email]::placeholder {
+  color: #cecece;
+}
+
+footer input[type=submit] {
+  max-width: 153px;
+  height: 53px;
+  display: block;
+  margin: 27px auto 0px auto;
+  background-color: transparent;
+  border: 2px solid #515151;
+  border-radius: 3px;
+  outline: none;
+}
+
+footer input[type=submit]:hover {
+    border-color: white; 
+    background-color: inherit;
+}
+
+footer input[type=submit]:active {
+    background-color: #515151;
+}
+
+/* Bottom section */
+
+p.rights {
+    color: #cecece;
+    text-align: center;
+    padding: 27px 0px;
+}
+
+/* Responsive section */
+
+@media screen and (max-width: 1100px) {
+    .project {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .project {
+        width: 100%;
+        margin-top: 10px;
+    }
+    svg.drop:hover + div form, .form-wrapper form:hover{
+    height: 550px;
+    }
+}
